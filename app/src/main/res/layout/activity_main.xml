@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Refresh.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/toolbar_main"
+                app:layout_constraintStart_toStartOf="@id/toolbar_main"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/refresh_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/activity_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/refresh_icon"
+                    android:text="@string/main_activity_title"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/delete_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/delete_btn_description"
+                    android:src="@drawable/ic_delete"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="56dp">
+
+        <TextView
+            android:id="@+id/usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:padding="10dp"
+            android:text="@string/total_usage_main"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <com.anychart.AnyChartView
+            android:id="@+id/pie_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/fab_description"
+        android:src="@drawable/ic_add_apps" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_insetEdge="bottom"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

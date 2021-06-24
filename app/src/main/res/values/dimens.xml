@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Apps list dimensions -->
+    <dimen name="item_height">70dp</dimen>
+    <dimen name="screen_edge_spacing">16dp</dimen>
+
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_subtitle">12sp</dimen>
+</resources>

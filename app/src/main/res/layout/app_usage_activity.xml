@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppUsageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Refresh.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/cab"
+                app:layout_constraintStart_toStartOf="@id/cab"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/app_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/app_name"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="App Name"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/box1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_edge_spacing"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/screen_edge_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <TextView
+            android:id="@+id/today_usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="@string/usage_today_view"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/daily_avg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/today_usage"
+            android:layout_marginTop="6dp"
+            android:text="@string/daily_avg_view"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/today_usage_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="min"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/daily_avg_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/today_usage_stats"
+            android:layout_gravity="end"
+            android:layout_marginTop="6dp"
+            android:text="min"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/text_title" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_edge_spacing"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/screen_edge_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/box1">
+
+        <TextView
+            android:id="@+id/week_usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="@string/week_usage_view"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/weekly_avg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/week_usage"
+            android:layout_marginTop="6dp"
+            android:text="@string/weekly_avg_view"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/week_usage_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="min"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/weekly_avg_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/week_usage_stats"
+            android:layout_marginTop="6dp"
+            android:text="min"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/text_title" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_edge_spacing"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/screen_edge_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/box2">
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/set_timer_view"
+            android:textSize="@dimen/text_title" />
+
+        <EditText
+            android:id="@+id/timer_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timer"
+            android:layout_toStartOf="@+id/timer_min"
+            android:autofillHints="hours"
+            android:ems="2"
+            android:hint="@string/timer_hour_hint"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/timer_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timer"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="132dp"
+            android:autofillHints="minutes"
+            android:ems="2"
+            android:hint="@string/timer_min_hint"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/set_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timer_min"
+            android:layout_centerHorizontal="true"
+            android:text="@string/set_btn" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_edge_spacing"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/screen_edge_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/box3">
+
+        <TextView
+            android:id="@+id/timer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/current_timer_view"
+            android:textSize="@dimen/text_title" />
+
+        <TextView
+            android:id="@+id/countdown_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timer2"
+            android:layout_centerHorizontal="true"
+            android:text="00:00:00"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/start_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/countdown_timer"
+            android:layout_centerHorizontal="true"
+            android:text="@string/start_btn" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_edge_spacing"
+        android:background="@android:color/white"
+        android:elevation="5dp"
+        android:padding="@dimen/screen_edge_spacing"
+        app:layout_constraintTop_toBottomOf="@+id/box4">
+
+        <TextView
+            android:id="@+id/delete_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_app"
+            android:textSize="@dimen/text_title" />
+
+        <ImageButton
+            android:id="@+id/delete_app_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/delete_app_btn_description"
+            android:src="@drawable/ic_delete"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

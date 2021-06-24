@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_explore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/Theme.Refresh.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/cab"
+            app:layout_constraintStart_toStartOf="@id/cab"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/refresh_icon2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/today_usage_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/refresh_icon2"
+                android:text="@string/explore_activity_title"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_explore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"
+        android:paddingStart="12dp"
+        android:paddingTop="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_explore" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_insetEdge="bottom"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
